@@ -222,6 +222,12 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
+  --background-color: #1a237e;
+  --nav-color: #ffffff;
+  --nav-hover-color: #f6d24b;
+  --nav-dropdown-background-color: #fffdf7;
+  --nav-dropdown-color: #1a2350;
+  --nav-dropdown-hover-color: #d4a017;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
@@ -524,6 +530,11 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
+  --background-color: #06071a;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #10154c;
+  --contrast-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
