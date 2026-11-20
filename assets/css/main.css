@@ -230,13 +230,16 @@ h6 {
   --nav-dropdown-hover-color: #d4a017;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 15px 0;
+  min-height: 78px;
+  padding: 10px 0;
+  border-bottom: 3px solid var(--accent-color);
   transition: all 0.5s;
   z-index: 997;
 }
 
 .header .logo {
   line-height: 1;
+  max-width: 300px;
 }
 
 .header .logo img {
@@ -245,10 +248,12 @@ h6 {
 }
 
 .header .logo h1 {
+  max-width: 290px;
+  font-size: 19px;
   font-weight: 700;
-  font-size: 30px;
+  line-height: 1.15;
   margin: 0;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--accent-color);
 }
@@ -257,10 +262,14 @@ h6 {
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
   background: var(--accent-color);
+  min-height: 40px;
   font-size: 14px;
-  padding: 8px 25px;
-  margin: 0 0 0 30px;
-  border-radius: 50px;
+  font-weight: 600;
+  padding: 10px 18px;
+  margin: 0 0 0 18px;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(212, 160, 23, 0.18);
   transition: 0.3s;
 }
 
@@ -277,8 +286,14 @@ h6 {
 
   .header .btn-getstarted {
     order: 2;
-    margin: 0 15px 0 0;
-    padding: 6px 15px;
+    min-height: 36px;
+    margin: 0 12px 0 0;
+    padding: 7px 12px;
+  }
+
+  .header .logo h1 {
+    max-width: 220px;
+    font-size: 16px;
   }
 
   .header .navmenu {
@@ -314,8 +329,8 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 16px;
+    padding: 18px 9px;
+    font-size: 14px;
     font-family: var(--nav-font);
     font-weight: 400;
     display: flex;
