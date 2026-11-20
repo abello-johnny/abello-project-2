@@ -916,6 +916,7 @@ section,
   align-items: center;
   justify-content: center;
   color: var(--default-color);
+  overflow: hidden;
 }
 
 .hero img {
@@ -925,12 +926,13 @@ section,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: 1;
 }
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 60%);
+  background: linear-gradient(90deg, rgba(6, 7, 26, 0.78) 0%, rgba(6, 7, 26, 0.48) 55%, rgba(6, 7, 26, 0.18) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -972,6 +974,10 @@ section,
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 68vh;
+  }
+
   .hero h2 {
     font-size: 32px;
   }
@@ -984,6 +990,17 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about > .container > .row > [class*="col-"] > img,
+.about-us > .container > .row > [class*="col-"] > img,
+.about .img-fluid,
+.about-us .img-fluid {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 14px 36px rgba(6, 7, 26, 0.12);
+}
+
 .about .content h3 {
   font-size: 2rem;
   font-weight: 700;
@@ -1193,17 +1210,41 @@ section,
 --------------------------------------------------------------*/
 .courses .course-item {
   background-color: var(--surface-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(6, 7, 26, 0.07);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.courses .course-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(6, 7, 26, 0.12);
+}
+
+.courses .course-item > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .courses .course-content {
-  padding: 15px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .courses .course-content h3 {
+  min-height: 56px;
+  margin: 14px 0 10px;
   font-weight: 700;
   font-size: 20px;
+  line-height: 1.35;
 }
 
 .courses .course-content h3 a {
@@ -1216,40 +1257,52 @@ section,
 }
 
 .courses .course-content .category {
+  min-height: 40px;
+  max-width: calc(100% - 48px);
+  display: flex;
+  align-items: center;
   background: var(--accent-color);
   color: var(--contrast-color);
-  font-size: 14px;
-  padding: 6px 14px;
+  font-size: 13px;
+  line-height: 1.25;
+  padding: 7px 12px;
   margin: 0;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .courses .course-content .price {
-  margin: 0;
+  flex-shrink: 0;
+  margin: 0 0 0 8px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
 .courses .course-content .description {
+  min-height: 66px;
+  margin-bottom: 18px;
   font-size: 14px;
+  line-height: 1.6;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
 .courses .trainer {
-  padding-top: 15px;
+  margin-top: auto;
+  padding-top: 14px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .courses .trainer .trainer-profile img {
-  max-width: 50px;
-  border-radius: 50px;
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .courses .trainer .trainer-profile .trainer-link {
-  padding-left: 10px;
+  padding-left: 8px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
 }
@@ -1259,12 +1312,14 @@ section,
 }
 
 .courses .trainer .trainer-rank {
-  font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  flex-shrink: 0;
+  gap: 4px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 55%);
 }
 
 .courses .trainer .trainer-rank .user-icon {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 /*--------------------------------------------------------------
@@ -1272,13 +1327,26 @@ section,
 --------------------------------------------------------------*/
 .trainers-index .member {
   background-color: var(--surface-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(6, 7, 26, 0.07);
   text-align: center;
   margin-bottom: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.trainers-index .member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(6, 7, 26, 0.12);
 }
 
 .trainers-index .member img {
-  margin: -1px -1px 30px -1px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0 0 24px 0;
 }
 
 .trainers-index .member .member-content {
@@ -1374,7 +1442,9 @@ section,
 
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
-  border-radius: 10px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
   border: 6px solid var(--background-color);
   position: absolute;
   left: -45px;
@@ -1478,14 +1548,16 @@ section,
 
 .course-details .course-header .course-image {
   margin-bottom: 20px;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 14px 36px rgba(6, 7, 26, 0.12);
 }
 
 .course-details .course-header .course-image img {
   width: 100%;
-  height: 400px;
+  height: clamp(260px, 38vw, 400px);
   object-fit: cover;
+  object-position: center;
 }
 
 .course-details .course-header .course-meta {
@@ -1957,9 +2029,11 @@ section,
 
 .trainers .member .member-img {
   margin: 0 80px;
+  aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 12px 30px rgba(6, 7, 26, 0.12);
 }
 
 @media (max-width: 1024px) {
@@ -1969,6 +2043,10 @@ section,
 }
 
 .trainers .member .member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   position: relative;
   z-index: 1;
 }
@@ -2031,23 +2109,30 @@ section,
 # Events Section
 --------------------------------------------------------------*/
 .events .card {
-  background-color: var(--background-color);
-  border: 0;
-  padding: 0 30px;
-  margin-bottom: 60px;
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 40px;
   position: relative;
+  box-shadow: 0 10px 28px rgba(6, 7, 26, 0.07);
 }
 
 .events .card-img {
-  width: calc(100% + 60px);
-  margin-left: -30px;
+  width: 100%;
+  margin-left: 0;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   z-index: 9;
   border-radius: 0;
 }
 
 .events .card-img img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: all 0.3s ease-in-out;
 }
 
@@ -2056,8 +2141,8 @@ section,
   background: var(--surface-color);
   border-top: 4px solid var(--surface-color);
   padding: 30px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  margin-top: -60px;
+  box-shadow: none;
+  margin-top: 0;
   transition: 0.3s;
 }
 
