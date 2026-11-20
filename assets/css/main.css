@@ -19,36 +19,36 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #fffdf7; /* KCC-inspired warm ivory page background */
-  --default-color: #28304a; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #1a237e; /* KCC navy used for headings and titles */
-  --accent-color: #d4a017; /* KCC gold used for buttons, links, and highlights */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #1a2350; /* Navy text remains readable on KCC gold controls */
+  --background-color: #fbfaf6; /* Clean warm ivory page background */
+  --default-color: #4b5060; /* Refined neutral text color */
+  --heading-color: #172554; /* Modern deep navy for headings */
+  --accent-color: #c9971a; /* Refined KCC gold */
+  --surface-color: #ffffff; /* Clean white card surfaces */
+  --contrast-color: #172554; /* Navy text for strong gold contrast */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #1a2350;  /* The default color of the main navmenu links */
-  --nav-hover-color: #d4a017; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #fffdf7; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #fffdf7; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #1a2350; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #d4a017; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #172554;  /* Modern navy navigation text */
+  --nav-hover-color: #c9971a; /* Polished gold hover state */
+  --nav-mobile-background-color: #fbfaf6; /* Clean mobile navigation surface */
+  --nav-dropdown-background-color: #ffffff; /* Crisp dropdown surface */
+  --nav-dropdown-color: #172554; /* Navy dropdown text */
+  --nav-dropdown-hover-color: #c9971a; /* Gold dropdown highlight */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #fbf7ec;
+  --background-color: #f5f3ea;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #06071a;
-  --default-color: #ffffff;
+  --background-color: #111827;
+  --default-color: #f8fafc;
   --heading-color: #ffffff;
-  --surface-color: #10154c;
+  --surface-color: #1f2937;
   --contrast-color: #ffffff;
 }
 
@@ -222,12 +222,12 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #1a237e;
+  --background-color: #172554;
   --nav-color: #ffffff;
-  --nav-hover-color: #f6d24b;
-  --nav-dropdown-background-color: #fffdf7;
-  --nav-dropdown-color: #1a2350;
-  --nav-dropdown-hover-color: #d4a017;
+  --nav-hover-color: #dfb43a;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #172554;
+  --nav-dropdown-hover-color: #c9971a;
   color: var(--default-color);
   background-color: var(--background-color);
   min-height: 78px;
@@ -553,10 +553,10 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  --background-color: #06071a;
-  --default-color: #ffffff;
+  --background-color: #111827;
+  --default-color: #f8fafc;
   --heading-color: #ffffff;
-  --surface-color: #10154c;
+  --surface-color: #1f2937;
   --contrast-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
